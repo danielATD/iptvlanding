@@ -1,9 +1,0 @@
-HTTP/1.1 200 OK
-Date: Thu, 30 Apr 2026 01:59:40 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 328
-Access-Control-Allow-Origin: *
-X-Ttl: 0
-X-Rl: 43
-
-{"status":"success","country":"Panama","countryCode":"PA","region":"4","regionName":"Chiriquí Province","city":"David","zip":"","lat":8.4273,"lon":-82.4309,"timezone":"America/Panama","isp":"Cable \u0026 Wireless Panama","org":"Cable \u0026 Wireless Panama","as":"AS11556 Cable \u0026 Wireless Panama","query":"201.227.88.121"}

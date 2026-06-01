@@ -1,8 +1,0 @@
-GET http://enlatv.com:8080/images/Be8_p6azrd7c-jP9V1fD1SGub1GJblsVrWi3d0vGk8j7x3x4ZekZg1DR7ZWgo9LqquAftN9knX5_8JQnPUDqMRFEzKU2Q1uSKy9TmRPu2to.jpg HTTP/1.1
-Host: enlatv.com:8080
-Connection: keep-alive
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Smarters/1.2.3 Chrome/53.0.2785.143 Electron/1.4.16 Safari/537.36
-Accept: image/webp,image/*,*/*;q=0.8
-Accept-Encoding: gzip, deflate
-Accept-Language: en-US
-

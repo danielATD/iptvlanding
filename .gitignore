@@ -10,3 +10,18 @@ desktop.ini
 # IDE
 .vscode/
 .idea/
+
+# Catalog data (generated dynamically by bot/extract_catalog.js)
+catalog_data/movies.json
+catalog_data/series.json
+catalog_data/channels.json
+catalog_data/movies_full.json
+catalog_data/series_full.json
+catalog_data/channels_full.json
+catalog_data/vod_categories.json
+catalog_data/series_categories.json
+catalog_data/trending.json
+catalog_data.zip
+
+# Resources (Fiddler captures - not needed in production)
+resources/

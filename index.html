@@ -2,72 +2,166 @@
 <html lang="es">
 
 <head>
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5VPGQF6JD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-Q5VPGQF6JD');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TV Mágico | Todas tus plataformas en un solo lugar</title>
+    <title>FlowTV | Catálogo Completo</title>
     <meta name="description"
-        content="Disfruta de televisión en vivo, películas, series y deportes. Sin cables, sin antenas, solo internet.">
-    <link rel="stylesheet" href="styles.css?v=5">
-    <!-- Font Awesome: load async to not block rendering on mobile -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    <!-- Prefetch catalog assets so they load faster when user navigates -->
-    <link rel="prefetch" href="catalogo.html">
-    <link rel="prefetch" href="catalogo.css?v=5">
-    <link rel="preconnect" href="https://api.themoviedb.org">
+        content="Explora nuestro catálogo completo de canales, películas y series. +5.689 canales, +17.552 películas y +7.638 series.">
+    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="catalogo.css?v=6">
+    <!-- Font Awesome: async load -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+    <!-- Preconnect to image servers for faster poster loading -->
     <link rel="preconnect" href="https://image.tmdb.org">
+    <link rel="dns-prefetch" href="https://image.tmdb.org">
+    <!-- Deferred Analytics (don't block page render) -->
+    <script>
+        window.addEventListener('load', function () {
+            // GA4
+            var gs = document.createElement('script');
+            gs.async = true; gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-Q5VPGQF6JD';
+            document.head.appendChild(gs);
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date()); gtag('config', 'G-Q5VPGQF6JD');
+            window.gtag = gtag;
+            // Meta Pixel
+            !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '4400299233579759'); fbq('track', 'PageView');
+        });
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=4400299233579759&ev=PageView&noscript=1" /></noscript>
 </head>
 
 <body>
+    <!-- Static Background (lightweight) -->
+    <div class="catalog-bg"
+        style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;background:radial-gradient(ellipse at 20% 50%, rgba(255,59,59,0.06) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(100,50,200,0.04) 0%, transparent 50%);">
+    </div>
+
     <header>
-        <a href="index.html" class="logo-container" style="text-decoration:none;color:inherit;">
+        <div class="logo-container" style="text-decoration:none;color:inherit;">
             <div class="logo">
-                <!-- Remplaza con tu logo -->
                 <img src="images/logo.png" alt="Logo"
                     onerror="this.src='https://via.placeholder.com/40x40/ff3b3b/ffffff?text=F'">
                 <span class="logo-text">FLOW<span class="logo-highlight">TV</span></span>
             </div>
-            <div class="logo-subtitle">
-                Servicio estable &bull; HD/4K &bull; Soporte rápido &bull; Activación inmediata
-            </div>
-        </a>
+            <div class="logo-subtitle">Servicio estable &bull; HD/4K &bull; Soporte r&#225;pido &bull; Activaci&#243;n
+                inmediata</div>
+        </div>
         <nav class="nav-actions">
-            <a href="catalogo.html" class="btn btn-outline">Catálogo</a>
-            <a href="catalogo.html#demo-en-vivo" class="btn btn-glass">Demostración</a>
+            <a href="#instalar" class="btn btn-outline"><i class="fas fa-download"></i> Instalación</a>
+            <a href="#catalogo" class="btn btn-outline"><i class="fas fa-th"></i> Ver Catálogo</a>
+            <a href="#demo-en-vivo" class="btn btn-glass">Demostración</a>
             <a href="#planes" class="btn btn-primary">Ver Planes</a>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="glow-circle glow-1"></div>
-            <div class="glow-circle glow-2"></div>
-
-            <div class="hero-content">
-                <h1>Todas tus plataformas en <span class="text-gradient">un solo lugar</span></h1>
-                <p class="subtitle">Además de televisión en vivo nacional e internacional. <br><strong>Sin cables, sin
-                        antenas, solo internet.</strong></p>
-                <p class="devices-list"><i class="fas fa-devices"></i> <strong>Dispositivos disponibles:</strong> Celular Android, iPhone (iOS), SmartTV Android, Roku, Televisor LG, Televisor Samsung</p>
-                <div class="hero-buttons">
-                    <a href="catalogo.html" class="btn btn-primary">Ver catálogo</a>
-                    <a href="catalogo.html#demo-en-vivo" class="btn btn-glass">Ver Demostración</a>
-                    <a href="#planes" class="btn btn-glass">Ver planes</a>
+        <!-- Hero Stats -->
+        <section class="catalog-hero">
+            <div class="hero-backdrop" id="hero-backdrop"></div>
+            <h1>Nuestro <span class="text-gradient">Catálogo</span></h1>
+            <p class="hero-subtitle">Todo el entretenimiento que necesitas en un solo lugar. Canales en vivo, películas
+                de estreno y series completas.</p>
+            <div class="stats-row">
+                <div class="stat-card">
+                    <span class="stat-icon"><i class="fas fa-satellite-dish"></i></span>
+                    <span class="stat-number" data-target="5689">0</span>
+                    <span class="stat-label">Canales</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon"><i class="fas fa-film"></i></span>
+                    <span class="stat-number" data-target="17552">0</span>
+                    <span class="stat-label">Películas</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon"><i class="fas fa-tv"></i></span>
+                    <span class="stat-number" data-target="7638">0</span>
+                    <span class="stat-label">Series</span>
                 </div>
             </div>
+        </section>
 
-            <div class="hero-image">
-                <!-- Remplaza con tu imagen promocional -->
-                <img src="images/horizontalmundial.png" alt="Vive la emoción del mundial" class="promo-img"
-                    onerror="this.src='https://images.unsplash.com/photo-1593784991095-a205069470b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+        <!-- Search Catalog Section -->
+        <section id="catalogo" class="catalog-search-section" style="padding: 2rem 5% 3rem;scroll-margin-top:60px;">
+            <div class="search-controls-embed"
+                style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem;justify-content:center;">
+                <div class="type-tabs-embed"
+                    style="display:flex;gap:0;background:rgba(255,255,255,0.04);border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);width:100%;max-width:400px;height:42px;align-items:stretch;">
+                    <button class="type-tab-embed active" data-type="movies" onclick="switchType('movies')"
+                        style="flex:1;padding:0;margin:0;border:none;background:transparent;color:#888;font-family:inherit;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.3s;box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:6px;"><i
+                            class="fas fa-film"></i> Películas</button>
+                    <button class="type-tab-embed" data-type="series" onclick="switchType('series')"
+                        style="flex:1;padding:0;margin:0;border:none;background:transparent;color:#888;font-family:inherit;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.3s;box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:6px;"><i
+                            class="fas fa-tv"></i> Series</button>
+                    <button class="type-tab-embed" data-type="channels" onclick="switchType('channels')"
+                        style="flex:1;padding:0;margin:0;border:none;background:transparent;color:#888;font-family:inherit;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.3s;box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:6px;"><i
+                            class="fas fa-satellite-dish"></i> Canales</button>
+                </div>
+                <div style="width:100%;max-width:400px;position:relative;">
+                    <i class="fas fa-search"
+                        style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#666;"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar películas..."
+                        style="width:100%;padding:9px 14px 9px 38px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.05);color:#e8e8e8;font-size:0.9rem;font-family:inherit;outline:none;">
+                </div>
+            </div>
+            <div id="genreFilters" style="display:none;flex-wrap:wrap;gap:6px;margin-bottom:1rem;"></div>
+            <div id="resultsInfo" style="color:#888;font-size:0.9rem;margin-bottom:0.8rem;text-align:center;"></div>
+            <div id="loadingMsg" style="text-align:center;padding:3rem;color:#666;display:none;"></div>
+            <div id="resultsGrid" style="display:none;max-width:1100px;margin:0 auto;"></div>
+            <div id="foldersContainer" style="display:none;max-width:1100px;margin:0 auto;"></div>
+            <button id="loadMoreBtn"
+                style="display:none;margin:1.5rem auto;padding:12px 40px;border-radius:12px;background:rgba(255,59,59,0.1);color:#ff3b3b;border:1px solid rgba(255,59,59,0.2);font-size:1rem;font-weight:600;cursor:pointer;font-family:inherit;"
+                onclick="loadMore()">Cargar más resultados</button>
+        </section>
+
+        <!-- Detail Overlay -->
+        <div id="detailOverlay" onclick="if(event.target===this)closeDetail()"
+            style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:200;display:none;align-items:center;justify-content:center;padding:10px;">
+            <div id="detailInner"
+                style="background:#141418;border:1px solid rgba(255,255,255,0.08);border-radius:14px;max-width:800px;width:100%;max-height:85vh;overflow-y:auto;position:relative;">
+                <button onclick="closeDetail()"
+                    style="position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;background:#ff3b3b;color:white;border:none;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,0.4);">&times;</button>
+                <div style="display:flex;gap:12px;padding:14px;align-items:flex-start;">
+                    <div id="detailPoster" style="width:80px;flex-shrink:0;border-radius:8px;overflow:hidden;"></div>
+                    <div style="flex:1;min-width:0;padding-right:30px;">
+                        <h2 id="detailTitle" style="font-size:1rem;margin:0 0 4px;line-height:1.2;"></h2>
+                        <div id="detailMeta" style="color:#888;margin-bottom:4px;font-size:0.72rem;"></div>
+                        <div id="detailGenres" style="display:flex;flex-wrap:wrap;gap:3px;margin-bottom:6px;"></div>
+                    </div>
+                </div>
+                <div style="padding:0 14px 14px;">
+                    <p id="detailPlot" style="color:#ccc;line-height:1.4;font-size:0.75rem;margin:0 0 8px;"></p>
+                    <div id="detailCredits" style="color:#888;font-size:0.68rem;line-height:1.5;margin-bottom:10px;">
+                    </div>
+                    <div style="display:flex;gap:8px;">
+                        <a href="https://wa.link/8fijhf" target="_blank" class="btn btn-primary"
+                            style="padding:8px 14px;font-size:0.75rem;flex:1;text-align:center;" onclick="closeDetail()">Pedir demo 6h</a>
+                        <a href="#planes" class="btn btn-outline"
+                            style="padding:8px 14px;font-size:0.75rem;flex:1;text-align:center;" onclick="closeDetail()">Ver Planes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Demo Section -->
+        <section id="demo-en-vivo" class="demo-section" style="padding-top:2rem;">
+            <h2>Demostración <span class="text-gradient">en Vivo</span></h2>
+            <p class="demo-subtitle">Mira cómo funciona nuestro servicio en tiempo real. Calidad HD/4K sin
+                interrupciones.</p>
+            <div class="demo-video-container">
+                <video controls muted loop src="video/demo.mp4"
+                    style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);"></video>
+            </div>
+            <div class="demo-cta">
+                <a href="#planes" class="btn btn-primary"><i class="fas fa-list"></i> Ver Planes</a>
+                <a href="https://wa.link/8fijhf" target="_blank" class="btn btn-glass"><i class="fas fa-play-circle"></i> Pedir demo de 6 horas</a>
             </div>
         </section>
 
@@ -89,7 +183,8 @@
             <div class="pricing-grid device-plans active-plan" id="plans-1">
                 <div class="price-card">
                     <h3 class="plan-name"><i class="fas fa-calendar-alt"></i> 1 Mes</h3>
-                    <div class="plan-price">₡2,500</div>
+                    <div class="plan-price">₡2,500 <span style="font-size:0.55em; color:#aaa; font-weight:500;">/
+                            $5</span></div>
                     <div class="plan-duration">por mes</div>
                     <ul class="plan-features">
                         <li><i class="fas fa-check"></i> <strong>1 pantalla / dispositivo</strong></li>
@@ -101,15 +196,20 @@
                     </ul>
                     <div class="plan-actions">
                         <a href="https://wa.link/k5zmfw" target="_blank" class="btn btn-primary">Adquiérelo Hoy</a>
-                        <a href="#instalar" class="btn btn-outline">Pedir demo de 6 horas</a>
+                        <a href="https://wa.link/8fijhf" target="_blank" class="btn btn-outline">Pedir demo de 6 horas</a>
+                        <a href="#catalogo" class="btn btn-outline"
+                            style="border-color:rgba(255,59,59,0.2);color:#ff6b6b;"><i class="fas fa-search"></i> Buscar
+                            Contenido</a>
                     </div>
                 </div>
 
                 <div class="price-card featured">
                     <h3 class="plan-name"><i class="fas fa-calendar-alt"></i> 3 Meses</h3>
-                    <div class="plan-price">₡5,900</div>
+                    <div class="plan-price">₡5,500 <span style="font-size:0.55em; color:#aaa; font-weight:500;">/
+                            $12</span></div>
                     <div class="plan-duration">cada 3 meses</div>
-                    <div class="plan-savings">Ahorrás ₡1,600</div>
+                    <div class="plan-savings">Ahorras ₡2,000 <span style="font-size:0.85em; opacity:0.8;">/ $3</span>
+                    </div>
                     <ul class="plan-features">
                         <li><i class="fas fa-check"></i> <strong>1 pantalla / dispositivo</strong></li>
                         <li><i class="fas fa-check"></i> +5.689 canales HD/4K</li>
@@ -120,15 +220,20 @@
                     </ul>
                     <div class="plan-actions">
                         <a href="https://wa.link/r5w5is" target="_blank" class="btn btn-primary">Adquiérelo Hoy</a>
-                        <a href="#instalar" class="btn btn-outline">Pedir demo de 6 horas</a>
+                        <a href="https://wa.link/8fijhf" target="_blank" class="btn btn-outline">Pedir demo de 6 horas</a>
+                        <a href="#catalogo" class="btn btn-outline"
+                            style="border-color:rgba(255,59,59,0.2);color:#ff6b6b;"><i class="fas fa-search"></i> Buscar
+                            Contenido</a>
                     </div>
                 </div>
 
                 <div class="price-card">
                     <h3 class="plan-name"><i class="fas fa-calendar-alt"></i> 6 Meses</h3>
-                    <div class="plan-price">₡9,500</div>
+                    <div class="plan-price">₡9,500 <span style="font-size:0.55em; color:#aaa; font-weight:500;">/
+                            $20</span></div>
                     <div class="plan-duration">cada 6 meses</div>
-                    <div class="plan-savings">Ahorrás ₡5,500</div>
+                    <div class="plan-savings">Ahorras ₡5,500 <span style="font-size:0.85em; opacity:0.8;">/ $10</span>
+                    </div>
                     <ul class="plan-features">
                         <li><i class="fas fa-check"></i> <strong>1 pantalla / dispositivo</strong></li>
                         <li><i class="fas fa-check"></i> +5.689 canales HD/4K</li>
@@ -140,6 +245,9 @@
                     <div class="plan-actions">
                         <a href="https://wa.link/xov3pi" target="_blank" class="btn btn-primary">Adquiérelo Hoy</a>
                         <a href="#instalar" class="btn btn-outline">Pedir demo de 6 horas</a>
+                        <a href="#catalogo" class="btn btn-outline"
+                            style="border-color:rgba(255,59,59,0.2);color:#ff6b6b;"><i class="fas fa-search"></i> Buscar
+                            Contenido</a>
                     </div>
                 </div>
             </div>
@@ -148,7 +256,8 @@
             <div class="pricing-grid device-plans" id="plans-4">
                 <div class="price-card">
                     <h3 class="plan-name"><i class="fas fa-calendar-alt"></i> 1 Mes</h3>
-                    <div class="plan-price">₡4,500</div>
+                    <div class="plan-price">₡4,500 <span style="font-size:0.55em; color:#aaa; font-weight:500;">/
+                            $9.90</span></div>
                     <div class="plan-duration">por mes</div>
                     <ul class="plan-features">
                         <li><i class="fas fa-check"></i> <strong>4 pantallas / dispositivos</strong></li>
@@ -161,14 +270,19 @@
                     <div class="plan-actions">
                         <a href="https://wa.link/jcg5fq" target="_blank" class="btn btn-primary">Adquiérelo Hoy</a>
                         <a href="#instalar" class="btn btn-outline">Pedir demo de 6 horas</a>
+                        <a href="#catalogo" class="btn btn-outline"
+                            style="border-color:rgba(255,59,59,0.2);color:#ff6b6b;"><i class="fas fa-search"></i> Buscar
+                            Contenido</a>
                     </div>
                 </div>
 
                 <div class="price-card featured">
                     <h3 class="plan-name"><i class="fas fa-calendar-alt"></i> 3 Meses</h3>
-                    <div class="plan-price">₡9,900</div>
+                    <div class="plan-price">₡9,900 <span style="font-size:0.55em; color:#aaa; font-weight:500;">/
+                            $22</span></div>
                     <div class="plan-duration">cada 3 meses</div>
-                    <div class="plan-savings">Ahorrás ₡3,600</div>
+                    <div class="plan-savings">Ahorras ₡3,600 <span style="font-size:0.85em; opacity:0.8;">/ $7.70</span>
+                    </div>
                     <ul class="plan-features">
                         <li><i class="fas fa-check"></i> <strong>4 pantallas / dispositivos</strong></li>
                         <li><i class="fas fa-check"></i> +5.689 canales HD/4K</li>
@@ -180,14 +294,19 @@
                     <div class="plan-actions">
                         <a href="https://wa.link/98596w" target="_blank" class="btn btn-primary">Adquiérelo Hoy</a>
                         <a href="#instalar" class="btn btn-outline">Pedir demo de 6 horas</a>
+                        <a href="#catalogo" class="btn btn-outline"
+                            style="border-color:rgba(255,59,59,0.2);color:#ff6b6b;"><i class="fas fa-search"></i> Buscar
+                            Contenido</a>
                     </div>
                 </div>
 
                 <div class="price-card">
                     <h3 class="plan-name"><i class="fas fa-calendar-alt"></i> 6 Meses</h3>
-                    <div class="plan-price">₡18,000</div>
+                    <div class="plan-price">₡15,900 <span style="font-size:0.55em; color:#aaa; font-weight:500;">/
+                            $35</span></div>
                     <div class="plan-duration">cada 6 meses</div>
-                    <div class="plan-savings">Ahorrás ₡9,000</div>
+                    <div class="plan-savings">Ahorras ₡11,100 <span style="font-size:0.85em; opacity:0.8;">/
+                            $24.40</span></div>
                     <ul class="plan-features">
                         <li><i class="fas fa-check"></i> <strong>4 pantallas / dispositivos</strong></li>
                         <li><i class="fas fa-check"></i> +5.689 canales HD/4K</li>
@@ -199,6 +318,9 @@
                     <div class="plan-actions">
                         <a href="https://wa.link/snn1nl" target="_blank" class="btn btn-primary">Adquiérelo Hoy</a>
                         <a href="#instalar" class="btn btn-outline">Pedir demo de 6 horas</a>
+                        <a href="#catalogo" class="btn btn-outline"
+                            style="border-color:rgba(255,59,59,0.2);color:#ff6b6b;"><i class="fas fa-search"></i> Buscar
+                            Contenido</a>
                     </div>
                 </div>
             </div>
@@ -219,9 +341,11 @@
                         <li>Luego te ayudamos a cargar el acceso (lista / usuario).</li>
                     </ul>
                     <div class="install-actions">
-                        <a href="https://play.google.com/store/apps/details?id=tvmagico.appcom&hl=es_419" target="_blank" class="btn btn-outline"><i
-                                class="fas fa-external-link-alt"></i> Link directo</a>
-                        <a href="https://wa.link/n6h8t4" target="_blank" class="btn btn-primary">Pedir demo de 6 horas</a>
+                        <a href="https://play.google.com/store/apps/details?id=tvmagico.appcom&hl=es_419"
+                            target="_blank" class="btn btn-outline"><i class="fas fa-external-link-alt"></i> Link
+                            directo</a>
+                        <a href="https://wa.link/n6h8t4" target="_blank" class="btn btn-primary">Pedir demo de 6
+                            horas</a>
                     </div>
                 </div>
 
@@ -235,7 +359,8 @@
                     </ul>
                     <div class="install-actions">
                         <a href="#" class="btn btn-outline"><i class="fab fa-app-store"></i> App Store</a>
-                        <a href="https://wa.link/aws5eh" target="_blank" class="btn btn-primary">Pedir demo de 6 horas</a>
+                        <a href="https://wa.link/aws5eh" target="_blank" class="btn btn-primary">Pedir demo de 6
+                            horas</a>
                     </div>
                 </div>
 
@@ -244,7 +369,7 @@
                     <h3><i class="fas fa-tv"></i> Smart TV / Android TV / FireTV</h3>
                     <ul class="install-steps">
                         <li>Instala la app "Downloader" en tu TV.</li>
-                        <li>En Downloader, ingresa el código: <strong>9028228</strong></li>
+                        <li>En Downloader, ingresa el código: <strong>694164</strong></li>
                         <li>Descarga e instala la app.</li>
                         <li>Luego solicita tu demo para activar.</li>
                     </ul>
@@ -252,7 +377,8 @@
                         <button class="btn btn-outline"
                             onclick="navigator.clipboard.writeText('9028228'); alert('Código copiado: 9028228');"
                             style="cursor:pointer;"><i class="fas fa-copy"></i> Copiar código 9028228</button>
-                        <a href="https://wa.link/z24iuq" target="_blank" class="btn btn-primary">Pedir demo de 6 horas</a>
+                        <a href="https://wa.link/z24iuq" target="_blank" class="btn btn-primary">Pedir demo de 6
+                            horas</a>
                     </div>
                 </div>
 
@@ -266,8 +392,10 @@
                         <li>Luego solicita tu demo para configurar el acceso.</li>
                     </ul>
                     <div class="install-actions">
-                        <a href="https://channelstore.roku.com/es-cr/details/57e6905363384c5878e40a013a7cf55e:8144f0868e1fd2f19d0418f64ad4bebd/tv-magico" target="_blank" class="btn btn-outline"><i class="fas fa-store"></i> Abrir tienda Roku</a>
-                        <a href="https://wa.link/45wt49" target="_blank" class="btn btn-primary">Pedir demo de 6 horas</a>
+                        <a href="https://channelstore.roku.com/es-cr/details/57e6905363384c5878e40a013a7cf55e:8144f0868e1fd2f19d0418f64ad4bebd/tv-magico"
+                            target="_blank" class="btn btn-outline"><i class="fas fa-store"></i> Abrir tienda Roku</a>
+                        <a href="https://wa.link/45wt49" target="_blank" class="btn btn-primary">Pedir demo de 6
+                            horas</a>
                     </div>
                 </div>
 
@@ -281,76 +409,13 @@
                         <li>Solicita tu demo para activar.</li>
                     </ul>
                     <div class="install-actions">
-                        <a href="https://us.lgappstv.com/main/tvapp/detail?appId=1209143" target="_blank" class="btn btn-outline"><i class="fas fa-store"></i> Tienda LG</a>
-                        <a href="https://www.samsung.com/es/tvs/smart-tv/samsung-tv-apps-detail/?appId=3202410037109" target="_blank" class="btn btn-outline"><i class="fas fa-store"></i> Tienda Samsung</a>
-                        <a href="https://wa.link/u5ddyw" target="_blank" class="btn btn-primary">Pedir demo de 6 horas</a>
+                        <a href="https://us.lgappstv.com/main/tvapp/detail?appId=1209143" target="_blank"
+                            class="btn btn-outline"><i class="fas fa-store"></i> Tienda LG</a>
+                        <a href="https://www.samsung.com/es/tvs/smart-tv/samsung-tv-apps-detail/?appId=3202410037109"
+                            target="_blank" class="btn btn-outline"><i class="fas fa-store"></i> Tienda Samsung</a>
+                        <a href="https://wa.link/u5ddyw" target="_blank" class="btn btn-primary">Pedir demo de 6
+                            horas</a>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Content Section -->
-        <section class="content-section">
-            <div class="content-intro">
-                <h2>Películas, Series y <span class="text-gradient">TV</span></h2>
-                <p>Explora nuestro contenido: estrenos, series completas y deportes/canales en vivo. Solicita tu demo
-                    gratis de 6 horas o adquiere el servicio para activarlo en tus dispositivos.</p>
-            </div>
-
-            <!-- Estrenos -->
-            <div class="content-row">
-                <div class="content-text">
-                    <span class="tag">#estrenos</span>
-                    <h3>Estrenos de Películas</h3>
-                    <div class="content-stat"><span class="content-stat-number">17.552</span> películas disponibles</div>
-                    <p>Estrenos actualizados en HD y Full HD para que siempre tengas algo nuevo que ver.</p>
-                    <div class="content-actions">
-                        <a href="catalogo.html" class="btn btn-outline"><i class="fas fa-film"></i> Ver Catálogo</a>
-                        <a href="#instalar" class="btn btn-outline">Quiero mi demo de 6 horas</a>
-                        <a href="#planes" class="btn btn-primary">Adquirir el servicio</a>
-                    </div>
-                </div>
-                <div class="content-image">
-                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                        alt="Estrenos de películas">
-                </div>
-            </div>
-
-            <!-- Series -->
-            <div class="content-row">
-                <div class="content-text">
-                    <span class="tag">#series</span>
-                    <h3>Series Completas</h3>
-                    <div class="content-stat"><span class="content-stat-number">7.638</span> series disponibles</div>
-                    <p>Miles de series disponibles para maratonear, con temporadas completas.</p>
-                    <div class="content-actions">
-                        <a href="catalogo.html" class="btn btn-outline"><i class="fas fa-tv"></i> Ver Catálogo</a>
-                        <a href="#instalar" class="btn btn-outline">Quiero mi demo de 6 horas</a>
-                        <a href="#planes" class="btn btn-primary">Adquirir el servicio</a>
-                    </div>
-                </div>
-                <div class="content-image">
-                    <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                        alt="Series completas">
-                </div>
-            </div>
-
-            <!-- Deportes -->
-            <div class="content-row">
-                <div class="content-text">
-                    <span class="tag">#en vivo</span>
-                    <h3>Deportes y Canales en Vivo</h3>
-                    <div class="content-stat"><span class="content-stat-number">5.689</span> canales en vivo</div>
-                    <p>Más de 5.689 canales en vivo: deportes, noticias, entretenimiento y más.</p>
-                    <div class="content-actions">
-                        <a href="catalogo.html" class="btn btn-outline"><i class="fas fa-satellite-dish"></i> Ver Catálogo</a>
-                        <a href="#instalar" class="btn btn-outline">Quiero mi demo de 6 horas</a>
-                        <a href="#planes" class="btn btn-primary">Adquirir el servicio</a>
-                    </div>
-                </div>
-                <div class="content-image">
-                    <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                        alt="Deportes en vivo">
                 </div>
             </div>
         </section>
@@ -359,12 +424,14 @@
     <footer>
         <p>&copy; 2026 FlowTV. Todos los derechos reservados.</p>
     </footer>
+
     <!-- Promotional Popup -->
     <div id="promo-popup-overlay" class="popup-overlay">
         <div class="popup-container">
             <button id="popup-close-btn" class="popup-close" aria-label="Cerrar">&times;</button>
             <div class="popup-logo">
-                <img src="images/logo.png" alt="Flow TV Logo" onerror="this.src='https://via.placeholder.com/120x120/ff3b3b/ffffff?text=F'">
+                <img src="images/logo_popup.png" alt="Flow TV Logo"
+                    onerror="this.src='https://via.placeholder.com/120x120/ff3b3b/ffffff?text=F'">
                 <div class="popup-brand-name">FLOW<span class="popup-brand-highlight">TV</span></div>
             </div>
             <div class="popup-stats">
@@ -383,18 +450,26 @@
             </div>
             <div class="popup-headline">
                 <h2>Disfruta del Mejor</h2>
-                <h2 class="popup-highlight">Streaming Premium</h2>
+                <h2 class="popup-highlight">IPTV</h2>
                 <h2>Sin Límites</h2>
             </div>
             <div class="popup-actions">
-                <a href="#instalar" class="btn popup-btn-trial" onclick="closePopup()"><i class="fas fa-play-circle"></i> Prueba Gratis 6 Horas</a>
-                <a href="#planes" class="btn popup-btn-plans" onclick="closePopup()"><i class="fas fa-list"></i> Ver Planes</a>
-                <a href="catalogo.html" class="btn popup-btn-plans" onclick="closePopup()"><i class="fas fa-th"></i> Ver Cat&#225;logo</a>
+                <a href="https://wa.link/8fijhf" target="_blank" class="btn popup-btn-trial" onclick="closePopup()"><i
+                        class="fas fa-play-circle"></i> Prueba Gratis 6 Horas</a>
+                <a href="#planes" class="btn popup-btn-plans" onclick="closePopup()"><i class="fas fa-list"></i> Ver
+                    Planes</a>
+                <a href="#catalogo" class="btn popup-btn-plans" onclick="closePopup()"><i class="fas fa-search"></i>
+                    Buscar Contenido</a>
             </div>
         </div>
     </div>
 
+    <a href="https://wa.link/8fijhf" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
+        // ========== POPUP ==========
         const popupOverlay = document.getElementById('promo-popup-overlay');
         const popupCloseBtn = document.getElementById('popup-close-btn');
         function closePopup() {
@@ -402,18 +477,10 @@
             setTimeout(() => { popupOverlay.style.display = 'none'; popupOverlay.classList.remove('popup-closing'); }, 400);
         }
         popupCloseBtn.addEventListener('click', closePopup);
-        popupOverlay.addEventListener('click', function(e) { if (e.target === popupOverlay) closePopup(); });
-        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePopup(); });
-        window.addEventListener('load', function() { 
-            const params = new URLSearchParams(window.location.search);
-            if (!params.has('nopopup')) {
-                setTimeout(() => { popupOverlay.classList.add('popup-active'); }, 800); 
-            } else {
-                popupOverlay.style.display = 'none';
-            }
-        });
+        popupOverlay.addEventListener('click', function (e) { if (e.target === popupOverlay) closePopup(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePopup(); });
 
-        // Device toggle for pricing
+        // ========== DEVICE TOGGLE ==========
         function switchDevice(count) {
             document.querySelectorAll('.device-toggle-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelector(`.device-toggle-btn[data-device="${count}"]`).classList.add('active');
@@ -422,33 +489,342 @@
             });
             const target = document.getElementById(`plans-${count}`);
             target.classList.add('active-plan');
-            gtag('event', 'switch_device_plan', { device_count: count });
         }
 
-        // GA4 Event Tracking
-        document.addEventListener('click', function(e) {
-            const link = e.target.closest('a[href]');
-            if (!link) return;
-            const href = link.getAttribute('href') || '';
-            if (href.includes('wa.link') || href.includes('whatsapp')) {
-                gtag('event', 'click_whatsapp', { link_url: href, page: 'index' });
-            } else if (link.textContent.includes('Adquiérelo') || link.textContent.includes('Adquirir')) {
-                const plan = link.closest('.price-card');
-                const planName = plan ? plan.querySelector('.plan-name')?.textContent : '';
-                const planPrice = plan ? plan.querySelector('.plan-price')?.textContent : '';
-                gtag('event', 'click_purchase', { plan_name: planName, plan_price: planPrice });
-            } else if (link.textContent.includes('demo') || link.textContent.includes('Demo')) {
-                gtag('event', 'click_demo', { link_text: link.textContent.trim() });
-            } else if (href.includes('catalogo')) {
-                gtag('event', 'click_catalog', { link_text: link.textContent.trim() });
+        // ========== COUNTERS ==========
+        function animateCounters() {
+            document.querySelectorAll('.stat-number[data-target]').forEach(el => {
+                const target = parseInt(el.dataset.target);
+                if (!target) return;
+                const duration = 1500;
+                const start = performance.now();
+                function update(now) {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    el.textContent = Math.floor(eased * target).toLocaleString('es-ES');
+                    if (progress < 1) requestAnimationFrame(update);
+                }
+                requestAnimationFrame(update);
+            });
+        }
+
+
+
+        // ========== INIT ==========
+        let searchTimer;
+        document.getElementById('searchInput').addEventListener('input', () => { clearTimeout(searchTimer); searchTimer = setTimeout(doSearch, 300); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+
+        window.addEventListener('load', () => {
+            animateCounters();
+            switchType('movies');
+            // Show popup unless ?nopopup is in the URL
+            const params = new URLSearchParams(window.location.search);
+            if (!params.has('nopopup')) {
+                setTimeout(() => { popupOverlay.classList.add('popup-active'); }, 800);
+            } else {
+                popupOverlay.style.display = 'none';
             }
         });
     </script>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.link/8fijhf" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <script>
+        // ========== SEARCH ENGINE ==========
+        let currentType = 'movies';
+        let allData = { movies: null, series: null, channels: null };
+        let channelCategories = null;
+        let filtered = [];
+        // Batch: 9 para móvil (3x3), 8 para tablet (2x4), 10 para PC (2x5)
+        function getBatch() { return window.innerWidth <= 480 ? 9 : window.innerWidth <= 768 ? 8 : 10; }
+        let displayCount = getBatch();
+        let selectedGenres = [];
+        let trendingData = null; // { movies: [stream_id,...], series: [series_id,...] }
+
+        function getSecureImageUrl(url) {
+            if (!url) return '';
+            // Proxy any IPTV image server through our PHP proxy to avoid mixed content
+            if (url.includes('enlatv.com:8080/')) {
+                const path = url.split('enlatv.com:8080/')[1];
+                return 'img_proxy.php?path=' + encodeURIComponent(path);
+            }
+            // Some movies use a different image server (IP-based)
+            const ipMatch = url.match(/https?:\/\/[\d.:]+\/(.*)/);
+            if (ipMatch) {
+                return 'img_proxy.php?host=' + encodeURIComponent(url.split('/').slice(0, 3).join('/')) + '&path=' + encodeURIComponent(ipMatch[1]);
+            }
+            return url;
+        }
+
+        const placeholders = { movies: 'Buscar por nombre...', series: 'Buscar por nombre...', channels: 'Buscar canales...' };
+        const loadingLabels = { movies: 'películas', series: 'series', channels: 'canales' };
+        const files = { movies: 'catalog_data/movies.json', series: 'catalog_data/series.json', channels: 'catalog_data/channels.json' };
+        const movieGenres = ['Acción', 'Aventura', 'Animación', 'Ciencia ficción', 'Comedia', 'Crimen', 'Documental', 'Drama', 'Familia', 'Fantasía', 'Historia', 'Misterio', 'Música', 'Romance', 'Suspense', 'Terror', 'Bélica', 'Western'];
+        const seriesGenres = ['Animación', 'Comedia', 'Crimen', 'Documental', 'Drama', 'Familia', 'Historia', 'Misterio', 'Romance', 'Western', 'Action & Adventure', 'Sci-Fi & Fantasy', 'Kids', 'Reality', 'War & Politics'];
+
+        // localStorage cache (24h TTL) - instant load on repeat visits
+        const CACHE_TTL = 24 * 60 * 60 * 1000;
+        function getCache(key) {
+            try {
+                const raw = localStorage.getItem('ftv_' + key);
+                if (!raw) return null;
+                const obj = JSON.parse(raw);
+                if (Date.now() - obj.ts > CACHE_TTL) { localStorage.removeItem('ftv_' + key); return null; }
+                return obj.data;
+            } catch (e) { return null; }
+        }
+        function setCache(key, data) {
+            try { localStorage.setItem('ftv_' + key, JSON.stringify({ ts: Date.now(), data: data })); } catch (e) { }
+        }
+
+        function applyTrending(data, type) {
+            if (type === 'channels' || !trendingData) return data;
+            if (data._trendingApplied) return data;
+
+            const trendingIds = type === 'movies' ? (trendingData.movies || []) : (trendingData.series || []);
+            if (trendingIds.length === 0) return data;
+
+            const idKey = type === 'movies' ? 'stream_id' : 'series_id';
+            const trendingSet = new Set(trendingIds.map(id => String(id)));
+
+            let trendingItems = [];
+            let otherItems = [];
+
+            for (let item of data) {
+                if (trendingSet.has(String(item[idKey]))) {
+                    item._trending = true;
+                    trendingItems.push(item);
+                } else {
+                    item._trending = false;
+                    otherItems.push(item);
+                }
+            }
+
+            const result = [...trendingItems, ...otherItems];
+            result._trendingApplied = true;
+            return result;
+        }
+
+        async function loadData(type) {
+            if (allData[type]) return allData[type];
+            // Load trending data once
+            if (!trendingData) {
+                try { trendingData = await (await fetch('catalog_data/trending.json')).json(); } catch (e) { trendingData = { movies: [], series: [] }; }
+            }
+            // Try cache first
+            const cached = getCache(type);
+            if (cached) {
+                allData[type] = applyTrending(cached, type);
+                if (type === 'channels' && !channelCategories) { channelCategories = getCache('live_categories') || []; }
+                return allData[type];
+            }
+            document.getElementById('loadingMsg').style.display = 'block';
+            document.getElementById('loadingMsg').innerHTML = '<div style="display:inline-block;width:30px;height:30px;border:3px solid rgba(255,59,59,0.2);border-top-color:#ff3b3b;border-radius:50%;animation:spin 0.8s linear infinite;margin-bottom:1rem;"></div><br>Cargando ' + loadingLabels[type] + '...';
+            document.getElementById('resultsGrid').style.display = 'none';
+            document.getElementById('foldersContainer').style.display = 'none';
+            const res = await fetch(files[type]);
+            const parsed = await res.json();
+            setCache(type, parsed);
+            allData[type] = applyTrending(parsed, type);
+            if (type === 'channels' && !channelCategories) {
+                try { channelCategories = await (await fetch('catalog_data/live_categories.json')).json(); setCache('live_categories', channelCategories); } catch (e) { channelCategories = []; }
+            }
+            document.getElementById('loadingMsg').style.display = 'none';
+            return allData[type];
+        }
+
+        async function switchType(type) {
+            currentType = type;
+            document.querySelectorAll('.type-tab-embed').forEach(t => { t.classList.remove('active'); t.style.background = 'transparent'; t.style.color = '#888'; });
+            const active = document.querySelector(`.type-tab-embed[data-type="${type}"]`);
+            active.classList.add('active'); active.style.background = '#ff3b3b'; active.style.color = 'white';
+            document.getElementById('searchInput').placeholder = placeholders[type];
+            document.getElementById('searchInput').value = '';
+            selectedGenres = [];
+            renderGenreFilters();
+            await loadData(type);
+            doSearch();
+        }
+
+        function renderGenreFilters() {
+            const container = document.getElementById('genreFilters');
+            if (currentType === 'channels') { container.style.display = 'none'; return; }
+            const allGenres = currentType === 'movies' ? movieGenres : seriesGenres;
+            const isMobile = window.innerWidth <= 768;
+            const genres = isMobile ? allGenres.slice(0, 8) : allGenres;
+            let html = genres.map(g => {
+                const isActive = selectedGenres.includes(g);
+                return `<button onclick="toggleGenre('${g.replace(/'/g, "\\'")}')" style="padding:4px 12px;border-radius:20px;font-size:${isMobile ? '0.68rem' : '0.75rem'};font-weight:600;background:${isActive ? 'rgba(255,59,59,0.15)' : 'rgba(255,255,255,0.04)'};color:${isActive ? '#ff3b3b' : '#888'};border:1px solid ${isActive ? 'rgba(255,59,59,0.3)' : 'rgba(255,255,255,0.08)'};cursor:pointer;font-family:inherit;">${g}</button>`;
+            }).join('');
+            if (selectedGenres.length > 0) html += `<button onclick="clearGenres()" style="padding:4px 12px;border-radius:20px;font-size:${isMobile ? '0.68rem' : '0.75rem'};font-weight:600;background:rgba(255,59,59,0.08);color:#ff3b3b;border:1px solid rgba(255,59,59,0.15);cursor:pointer;font-family:inherit;"><i class="fas fa-times"></i> Limpiar</button>`;
+            container.innerHTML = html;
+            container.style.display = 'flex';
+        }
+        function toggleGenre(g) { const i = selectedGenres.indexOf(g); if (i > -1) selectedGenres.splice(i, 1); else selectedGenres.push(g); renderGenreFilters(); doSearch(); }
+        function clearGenres() { selectedGenres = []; renderGenreFilters(); doSearch(); }
+
+        function doSearch() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            const data = allData[currentType] || [];
+            displayCount = getBatch();
+            let results = data;
+            if (query) { const terms = query.split(/\s+/); results = results.filter(item => { const name = (item.name || item.title || '').toLowerCase(); return terms.every(t => name.includes(t)); }); }
+            if (selectedGenres.length > 0 && currentType !== 'channels') {
+                results = results.filter(item => { const ig = (item.genre || '').split(',').map(g => g.trim().toLowerCase()); return selectedGenres.every(sg => ig.some(g => g === sg.toLowerCase())); });
+            }
+            const seen = new Set();
+            filtered = results.filter(item => { const id = item.stream_id || item.series_id || item.name; if (seen.has(id)) return false; seen.add(id); return true; });
+            if (currentType === 'channels') { renderChannelFolders(); } else { renderResults(); }
+        }
+
+        function renderResults() {
+            const grid = document.getElementById('resultsGrid');
+            const info = document.getElementById('resultsInfo');
+            const btn = document.getElementById('loadMoreBtn');
+            document.getElementById('foldersContainer').style.display = 'none';
+            grid.style.display = 'grid';
+            const isMob = window.innerWidth <= 480;
+            const isTab = window.innerWidth <= 768;
+            grid.style.gridTemplateColumns = isMob ? 'repeat(3, 1fr)' : isTab ? 'repeat(4, 1fr)' : 'repeat(5, 1fr)';
+            grid.style.gap = isMob ? '0.4rem' : '1.2rem';
+            const showing = Math.min(displayCount, filtered.length);
+            info.innerHTML = `<span>Mostrando <span style="color:#ff3b3b;font-weight:700">${showing.toLocaleString()}</span> de <span style="color:#ff3b3b;font-weight:700">${filtered.length.toLocaleString()}</span> ${loadingLabels[currentType]}</span>`;
+            if (filtered.length === 0) { grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:4rem;color:#555;"><i class="fas fa-search" style="font-size:3rem;display:block;margin-bottom:1rem;color:#333;"></i>No se encontraron resultados</div>'; btn.style.display = 'none'; return; }
+            grid.innerHTML = filtered.slice(0, displayCount).map((item, i) => {
+                const rating = Number(item.rating || item.rating_5based * 2 || 0);
+                const idKey = currentType === 'movies' ? 'stream_id' : 'series_id';
+                const id = item[idKey] || item.num;
+                let rawImgUrl = item.stream_icon || item.cover;
+                // Use TMDB poster from trending.json if available (fixes broken IPTV icons)
+                if (item._trending && trendingData.posters && trendingData.posters[id]) {
+                    rawImgUrl = trendingData.posters[id];
+                }
+                const imgUrl = getSecureImageUrl(rawImgUrl);
+                const trendBadge = item._trending ? `<span style="position:absolute;bottom:4px;left:4px;background:linear-gradient(135deg,#ff6b00,#ff3b3b);color:white;padding:2px 6px;border-radius:4px;font-size:${isMob ? '0.48' : '0.65'}rem;font-weight:700;display:flex;align-items:center;gap:2px;">🔥 Top</span>` : '';
+                return `<div onclick="showDetail(${i})" style="background:rgba(255,255,255,0.03);border:1px solid ${item._trending ? 'rgba(255,100,0,0.25)' : 'rgba(255,255,255,0.06)'};border-radius:${isMob ? '8' : '14'}px;overflow:hidden;cursor:pointer;transition:all 0.3s;"><div style="width:100%;aspect-ratio:2/3;background:linear-gradient(135deg,#1a1020,#0d0d15);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">${imgUrl ? `<img src="${imgUrl}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">` : ('<div style="font-size:' + (isMob ? '1.2' : '2.5') + 'rem;opacity:0.2;">🎬</div>')}${item.year ? `<span style="position:absolute;top:4px;left:4px;background:rgba(0,0,0,0.7);color:white;padding:1px 5px;border-radius:4px;font-size:${isMob ? '0.52' : '0.7'}rem;font-weight:600;">${item.year}</span>` : ''}${rating > 0 ? `<span style="position:absolute;top:4px;right:4px;background:rgba(255,59,59,0.85);color:white;padding:1px 5px;border-radius:4px;font-size:${isMob ? '0.52' : '0.7'}rem;font-weight:700;">⭐ ${rating.toFixed(1)}</span>` : ''}${trendBadge}</div><div style="padding:${isMob ? '0.25rem 0.35rem' : '0.6rem 0.8rem'};"><div style="font-size:${isMob ? '0.62' : '0.82'}rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="${item.name || item.title}">${item.name || item.title}</div><div style="font-size:${isMob ? '0.52' : '0.7'}rem;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${item.genre || ''}</div></div></div>`;
+            }).join('');
+            btn.style.display = displayCount < filtered.length ? 'block' : 'none';
+        }
+
+        let folderPage = 1;
+        let folderCatOrder = [];
+        let folderGroups = {};
+        let folderCatMap = {};
+        const FOLDERS_PER_PAGE = window.innerWidth <= 480 ? 8 : window.innerWidth <= 768 ? 9 : 15;
+
+        function renderChannelFolders() {
+            const container = document.getElementById('foldersContainer');
+            document.getElementById('resultsGrid').style.display = 'none';
+            document.getElementById('loadMoreBtn').style.display = 'none';
+            container.style.display = 'block';
+            folderCatMap = {};
+            if (channelCategories) channelCategories.forEach(c => folderCatMap[c.category_id] = c.category_name);
+            folderGroups = {};
+            filtered.forEach(ch => { const catId = ch.category_id || 'other'; if (!folderGroups[catId]) folderGroups[catId] = []; folderGroups[catId].push(ch); });
+            folderCatOrder = channelCategories ? channelCategories.map(c => c.category_id).filter(id => folderGroups[id]) : Object.keys(folderGroups);
+            folderPage = 1;
+            renderFolderPage();
+        }
+
+        function renderFolderPage() {
+            const container = document.getElementById('foldersContainer');
+            const info = document.getElementById('resultsInfo');
+            const totalPages = Math.ceil(folderCatOrder.length / FOLDERS_PER_PAGE);
+            const start = (folderPage - 1) * FOLDERS_PER_PAGE;
+            const pageCats = folderCatOrder.slice(start, start + FOLDERS_PER_PAGE);
+            info.innerHTML = `<span><span style="color:#ff3b3b;font-weight:700">${folderCatOrder.length}</span> carpetas · <span style="color:#ff3b3b;font-weight:700">${filtered.length.toLocaleString()}</span> canales · Página ${folderPage} de ${totalPages}</span>`;
+            if (folderCatOrder.length === 0) { container.innerHTML = '<div style="text-align:center;padding:4rem;color:#555;">No se encontraron canales</div>'; return; }
+            const isMob = window.innerWidth <= 480;
+            let html = '<div style="display:grid;grid-template-columns:' + (isMob ? 'repeat(2,1fr)' : window.innerWidth <= 768 ? 'repeat(3,1fr)' : 'repeat(5,1fr)') + ';gap:' + (isMob ? '0.5rem' : '0.8rem') + ';">';
+            pageCats.forEach(catId => {
+                const name = folderCatMap[catId] || 'Otros';
+                const channels = folderGroups[catId];
+                html += `<div onclick="toggleFolder('${catId}')" id="folder-${catId}" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:${isMob ? '10' : '14'}px;padding:${isMob ? '0.8rem' : '1.2rem'};cursor:pointer;display:flex;align-items:center;gap:${isMob ? '8' : '12'}px;transition:all 0.3s;overflow:hidden;"><div style="font-size:${isMob ? '1.3' : '1.8'}rem;flex-shrink:0;">📁</div><div style="flex:1;min-width:0;overflow:hidden;"><div style="font-weight:700;font-size:${isMob ? '0.72' : '0.85'}rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${name}</div><div style="font-size:${isMob ? '0.62' : '0.72'}rem;color:#888;margin-top:2px;">${channels.length} canales</div></div><div style="color:#555;font-size:${isMob ? '0.7' : '0.9'}rem;flex-shrink:0;"><i class="fas fa-chevron-right"></i></div></div>`;
+                html += `<div id="fch-${catId}" style="display:none;grid-column:1/-1;background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:1rem;"><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.6rem;">`;
+                channels.forEach(ch => {
+                    const chData = JSON.stringify(ch).replace(/"/g, '&quot;');
+                    html += `<div onclick="event.stopPropagation();showChannelDetail(this)" data-ch="${chData}" data-cat="${(folderCatMap[ch.category_id] || '').replace(/"/g, '&quot;')}" style="display:flex;align-items:center;gap:10px;padding:0.6rem 0.8rem;background:rgba(255,255,255,0.03);border-radius:10px;border:1px solid rgba(255,255,255,0.04);cursor:pointer;">${ch.stream_icon ? `<img src="${ch.stream_icon}" alt="" style="width:36px;height:36px;border-radius:8px;object-fit:contain;background:rgba(255,255,255,0.05);" onerror="this.outerHTML='<div style=\\'width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;color:#ff3b3b;font-size:0.9rem;\\'><i class=\\'fas fa-tv\\'></i></div>'">` : '<div style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;color:#ff3b3b;font-size:0.9rem;"><i class="fas fa-tv"></i></div>'}<div style="font-size:0.82rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${ch.name}</div></div>`;
+                });
+                html += '</div></div>';
+            });
+            html += '</div>';
+            if (totalPages > 1) {
+                html += '<div style="display:flex;justify-content:center;gap:6px;margin-top:1.5rem;flex-wrap:wrap;">';
+                for (let i = 1; i <= totalPages; i++) {
+                    const isActive = i === folderPage;
+                    html += `<button onclick="goFolderPage(${i})" style="width:38px;height:38px;border-radius:10px;border:1px solid ${isActive ? '#ff3b3b' : 'rgba(255,255,255,0.1)'};background:${isActive ? '#ff3b3b' : 'rgba(255,255,255,0.04)'};color:${isActive ? 'white' : '#888'};font-weight:700;font-size:0.9rem;cursor:pointer;font-family:inherit;">${i}</button>`;
+                }
+                html += '</div>';
+            }
+            container.innerHTML = html;
+        }
+
+        function goFolderPage(page) {
+            folderPage = page;
+            renderFolderPage();
+        }
+
+        function toggleFolder(catId) {
+            const panel = document.getElementById('fch-' + catId);
+            const isOpen = panel.style.display === 'block';
+            panel.style.display = isOpen ? 'none' : 'block';
+            if (!isOpen) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function showChannelDetail(el) {
+            const ch = JSON.parse(el.dataset.ch);
+            const catName = el.dataset.cat || '';
+            document.getElementById('detailTitle').textContent = ch.name || '';
+            let meta = '';
+            if (catName) meta += `<span>📁 ${catName}</span> `;
+            if (ch.epg_channel_id) meta += `<span>📺 EPG: ${ch.epg_channel_id}</span>`;
+            document.getElementById('detailMeta').innerHTML = meta;
+            document.getElementById('detailGenres').innerHTML = '';
+            document.getElementById('detailPlot').textContent = '';
+            document.getElementById('detailCredits').innerHTML = '';
+            const icon = getSecureImageUrl(ch.stream_icon || '');
+            document.getElementById('detailPoster').innerHTML = icon
+                ? `<img src="${icon}" alt="" style="border-radius:12px;background:rgba(255,255,255,0.05);padding:10px;object-fit:contain;width:100%;" onerror="this.style.display='none'">`
+                : '<div style="width:100px;height:100px;background:#1a1a2e;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:3rem;"><i class="fas fa-tv" style="color:#ff3b3b;"></i></div>';
+            document.getElementById('detailOverlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function loadMore() { displayCount += getBatch(); renderResults(); }
+
+        function showDetail(index) {
+            const item = filtered[index]; if (!item) return;
+            const rating = Number(item.rating || 0);
+            document.getElementById('detailTitle').textContent = item.name || item.title || '';
+            let meta = '';
+            if (item.year) meta += `<span>📅 ${item.year}</span> `;
+            if (rating > 0) meta += `<span>⭐ ${rating.toFixed(1)}</span> `;
+            if (item.episode_run_time && item.episode_run_time !== '0') meta += `<span>🕐 ${item.episode_run_time} min</span>`;
+            document.getElementById('detailMeta').innerHTML = meta;
+            document.getElementById('detailGenres').innerHTML = (item.genre || '').split(',').map(g => g.trim()).filter(Boolean).map(g => `<span style="padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:600;background:rgba(255,59,59,0.1);color:#ff3b3b;border:1px solid rgba(255,59,59,0.15);">${g}</span>`).join('');
+            document.getElementById('detailPlot').textContent = item.plot || '';
+            let credits = '';
+            if (item.cast) credits += `<strong>Reparto:</strong> ${item.cast}<br>`;
+            if (item.director) credits += `<strong>Director:</strong> ${item.director}<br>`;
+            if (item.release_date) credits += `<strong>Estreno:</strong> ${item.release_date}`;
+            document.getElementById('detailCredits').innerHTML = credits;
+
+            const idKey = currentType === 'movies' ? 'stream_id' : 'series_id';
+            const id = item[idKey] || item.num;
+            let rawImgUrl = item.stream_icon || item.cover || '';
+            if (item._trending && trendingData && trendingData.posters && trendingData.posters[id]) {
+                rawImgUrl = trendingData.posters[id];
+            }
+            const posterUrl = getSecureImageUrl(rawImgUrl);
+
+            document.getElementById('detailPoster').innerHTML = posterUrl ? `<img src="${posterUrl}" alt="" style="width:100%;border-radius:12px;" onerror="this.style.display='none'">` : '<div style="width:100px;height:150px;background:#1a1a2e;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:3rem;">🎬</div>';
+            document.getElementById('detailOverlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDetail() { document.getElementById('detailOverlay').style.display = 'none'; document.body.style.overflow = ''; }
+    </script>
+
 </body>
 
 </html>
