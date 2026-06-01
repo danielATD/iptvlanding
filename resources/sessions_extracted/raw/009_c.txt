@@ -1,0 +1,6 @@
+CONNECT 149.154.175.60:443 HTTP/1.1
+Connection: keep-alive
+Host: 149.154.175.60
+User-Agent: Mozilla/5.0
+
+Request HTTPSParse failed: Object reference not set to an instance of an object.

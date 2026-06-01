@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Session SID="2" BitFlags="0">
+  <SessionTimers ClientConnected="2026-04-29T20:59:11.0388272-05:00" ClientBeginRequest="2026-04-29T20:59:11.0742887-05:00" GotRequestHeaders="2026-04-29T20:59:11.0742887-05:00" ClientDoneRequest="2026-04-29T20:59:11.0742887-05:00" GatewayTime="0" DNSTime="51" TCPConnectTime="264" HTTPSHandshakeTime="0" ServerConnected="2026-04-29T20:59:11.3905646-05:00" FiddlerBeginRequest="2026-04-29T20:59:11.3905646-05:00" ServerGotRequest="2026-04-29T20:59:11.3905646-05:00" ServerBeginResponse="2026-04-29T20:59:11.5948023-05:00" GotResponseHeaders="2026-04-29T20:59:11.5948023-05:00" ServerDoneResponse="2026-04-29T20:59:11.5948023-05:00" ClientBeginResponse="2026-04-29T20:59:11.5948023-05:00" ClientDoneResponse="2026-04-29T20:59:11.5948023-05:00" />
+  <PipeInfo />
+  <SessionFlags>
+    <SessionFlag N="https-client-version" V="None" />
+    <SessionFlag N="x-egressport" V="51779" />
+    <SessionFlag N="x-responsebodytransferlength" V="795" />
+    <SessionFlag N="x-clientport" V="51778" />
+    <SessionFlag N="x-clientip" V="127.0.0.1" />
+    <SessionFlag N="x-hostip" V="5.182.209.135" />
+    <SessionFlag N="x-processinfo" V="tvmagico:21908" />
+  </SessionFlags>
+</Session>

@@ -1,0 +1,8 @@
+HTTP/1.1 200 Connection Established
+FiddlerGateway: Direct
+StartTime: 20:59:18.950
+Connection: close
+EndTime: 21:00:50.910
+ClientToServerBytes: 446
+ServerToClientBytes: 258
+

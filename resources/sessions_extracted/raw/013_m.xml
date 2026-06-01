@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Session SID="13" BitFlags="1100">
+  <SessionTimers ClientConnected="2026-04-29T20:59:21.7960557-05:00" ClientBeginRequest="2026-04-29T20:59:21.7968274-05:00" GotRequestHeaders="2026-04-29T20:59:21.7968274-05:00" ClientDoneRequest="2026-04-29T20:59:21.7968274-05:00" GatewayTime="0" DNSTime="20" TCPConnectTime="56" HTTPSHandshakeTime="0" ServerConnected="2026-04-29T20:59:21.8720924-05:00" FiddlerBeginRequest="2026-04-29T20:59:21.8720924-05:00" ServerGotRequest="2026-04-29T20:59:21.8720924-05:00" ServerBeginResponse="0001-01-01T00:00:00" GotResponseHeaders="0001-01-01T00:00:00" ServerDoneResponse="0001-01-01T00:00:00" ClientBeginResponse="2026-04-29T20:59:21.8720924-05:00" ClientDoneResponse="2026-04-29T20:59:21.8720924-05:00" />
+  <PipeInfo />
+  <TunnelInfo BytesEgress="2543" BytesIngress="4067" />
+  <SessionFlags>
+    <SessionFlag N="x-supported-client-tls-protocols" V="15360" />
+    <SessionFlag N="x-egressport" V="56334" />
+    <SessionFlag N="https-server-cipher" V="TLS_AES_256_GCM_SHA384" />
+    <SessionFlag N="https-client-snihostname" V="c.go-mpulse.net" />
+    <SessionFlag N="https-server-sessionid" V="5B 84 CC 4B 43 CD A4 40 17 4B 21 45 45 74 07 D1 90 0E 94 AC 7A E6 82 AB 3F 5A E4 CA A6 82 B2 F6" />
+    <SessionFlag N="x-processinfo" V="chrome:11740" />
+    <SessionFlag N="x-responsebodytransferlength" V="0" />
+    <SessionFlag N="x-clientip" V="127.0.0.1" />
+    <SessionFlag N="x-clientport" V="56333" />
+    <SessionFlag N="x-supported-client-alpn" V="h2, http/1.1" />
+    <SessionFlag N="https-client-version" V="None" />
+    <SessionFlag N="x-hostip" V="23.197.168.199" />
+    <SessionFlag N="https-client-sessionid" V="5B 84 CC 4B 43 CD A4 40 17 4B 21 45 45 74 07 D1 90 0E 94 AC 7A E6 82 AB 3F 5A E4 CA A6 82 B2 F6" />
+  </SessionFlags>
+</Session>

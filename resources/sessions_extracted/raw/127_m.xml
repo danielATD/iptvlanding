@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Session SID="127" BitFlags="1100">
+  <SessionTimers ClientConnected="2026-04-29T20:59:46.8091556-05:00" ClientBeginRequest="2026-04-29T20:59:46.8108791-05:00" GotRequestHeaders="2026-04-29T20:59:46.8108791-05:00" ClientDoneRequest="2026-04-29T20:59:46.8108791-05:00" GatewayTime="0" DNSTime="0" TCPConnectTime="77" HTTPSHandshakeTime="0" ServerConnected="2026-04-29T20:59:46.8889373-05:00" FiddlerBeginRequest="2026-04-29T20:59:46.8889373-05:00" ServerGotRequest="2026-04-29T20:59:46.8889373-05:00" ServerBeginResponse="0001-01-01T00:00:00" GotResponseHeaders="0001-01-01T00:00:00" ServerDoneResponse="2026-04-29T21:00:52.1396829-05:00" ClientBeginResponse="2026-04-29T21:00:52.1396829-05:00" ClientDoneResponse="2026-04-29T21:00:52.1396829-05:00" />
+  <PipeInfo />
+  <TunnelInfo BytesEgress="3983" BytesIngress="7045" />
+  <SessionFlags>
+    <SessionFlag N="x-supported-client-tls-protocols" V="15360" />
+    <SessionFlag N="x-egressport" V="57182" />
+    <SessionFlag N="https-server-cipher" V="TLS_AES_128_GCM_SHA256" />
+    <SessionFlag N="https-client-snihostname" V="web.whatsapp.com" />
+    <SessionFlag N="https-server-sessionid" V="04 A6 B1 4C 60 38 1D FD 1D F8 2F EE 1E 0A 09 24 A3 FF 0D 34 9E 24 07 2E 20 EC F9 5F FE 0C BB C9" />
+    <SessionFlag N="x-processinfo" V="chrome:11740" />
+    <SessionFlag N="x-responsebodytransferlength" V="0" />
+    <SessionFlag N="x-clientip" V="127.0.0.1" />
+    <SessionFlag N="x-clientport" V="57181" />
+    <SessionFlag N="x-supported-client-alpn" V="h2, http/1.1" />
+    <SessionFlag N="https-client-version" V="None" />
+    <SessionFlag N="x-hostip" V="57.144.163.32" />
+    <SessionFlag N="https-client-sessionid" V="04 A6 B1 4C 60 38 1D FD 1D F8 2F EE 1E 0A 09 24 A3 FF 0D 34 9E 24 07 2E 20 EC F9 5F FE 0C BB C9" />
+  </SessionFlags>
+</Session>

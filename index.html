@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q5VPGQF6JD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Q5VPGQF6JD');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Mágico | Todas tus plataformas en un solo lugar</title>
+    <meta name="description"
+        content="Disfruta de televisión en vivo, películas, series y deportes. Sin cables, sin antenas, solo internet.">
+    <link rel="stylesheet" href="styles.css?v=5">
+    <!-- Font Awesome: load async to not block rendering on mobile -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <!-- Prefetch catalog assets so they load faster when user navigates -->
+    <link rel="prefetch" href="catalogo.html">
+    <link rel="prefetch" href="catalogo.css?v=5">
+    <link rel="preconnect" href="https://api.themoviedb.org">
+    <link rel="preconnect" href="https://image.tmdb.org">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo-container" style="text-decoration:none;color:inherit;">
+            <div class="logo">
+                <!-- Remplaza con tu logo -->
+                <img src="images/logo.png" alt="Logo"
+                    onerror="this.src='https://via.placeholder.com/40x40/ff3b3b/ffffff?text=F'">
+                <span class="logo-text">FLOW<span class="logo-highlight">TV</span></span>
+            </div>
+            <div class="logo-subtitle">
+                Servicio estable &bull; HD/4K &bull; Soporte rápido &bull; Activación inmediata
+            </div>
+        </a>
+        <nav class="nav-actions">
+            <a href="catalogo.html" class="btn btn-outline">Catálogo</a>
+            <a href="catalogo.html#demo-en-vivo" class="btn btn-glass">Demostración</a>
+            <a href="#planes" class="btn btn-primary">Ver Planes</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="glow-circle glow-1"></div>
+            <div class="glow-circle glow-2"></div>
+
+            <div class="hero-content">
+                <h1>Todas tus plataformas en <span class="text-gradient">un solo lugar</span></h1>
+                <p class="subtitle">Además de televisión en vivo nacional e internacional. <br><strong>Sin cables, sin
+                        antenas, solo internet.</strong></p>
+                <p class="devices-list"><i class="fas fa-devices"></i> <strong>Dispositivos disponibles:</strong> Celular Android, iPhone (iOS), SmartTV Android, Roku, Televisor LG, Televisor Samsung</p>
+                <div class="hero-buttons">
+                    <a href="catalogo.html" class="btn btn-primary">Ver catálogo</a>
+                    <a href="catalogo.html#demo-en-vivo" class="btn btn-glass">Ver Demostración</a>
+                    <a href="#planes" class="btn btn-glass">Ver planes</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <!-- Remplaza con tu imagen promocional -->
+                <img src="images/horizontalmundial.png" alt="Vive la emoción del mundial" class="promo-img"
+                    onerror="this.src='https://images.unsplash.com/photo-1593784991095-a205069470b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="planes" class="pricing">
+            <h2>Nuestros <span class="text-gradient">Planes</span></h2>
+
+            <!-- Device Toggle -->
+            <div class="device-toggle">
+                <button class="device-toggle-btn active" data-device="1" onclick="switchDevice(1)">
+                    <i class="fas fa-mobile-alt"></i> 1 Dispositivo
+                </button>
+                <button class="device-toggle-btn" data-device="4" onclick="switchDevice(4)">
+                    <i class="fas fa-layer-group"></i> 4 Dispositivos
+                </button>
+            </div>
+
+            <!-- 1 Dispositivo Plans -->
+            <div class="pricing-grid device-plans active-plan" id="plans-1">
+                <div class="price-card">
+                    <h3 class="plan-name"><i class="fas fa-calendar-alt"></i> 1 Mes</h3>
+                    <div class="plan-price">₡2,500</div>
+                    <div class="plan-duration">por mes</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> <strong>1 pantalla / dispositivo</strong></li>
+                        <li><i class="fas fa-check"></i> +5.689 canales HD/4K</li>
+                        <li><i class="fas fa-check"></i> +17.552 películas</li>
+                        <li><i class="fas fa-check"></i> +7.638 series de TV</li>
+                        <li><i class="fas fa-check"></i> Deportes HD/4K</li>
+                        <li><i class="fas fa-check"></i> Soporte: Todos los días</li>
+                    </ul>
+                    <div class="plan-actions">
+                        <a href="https://wa.link/k5zmfw" target="_blank" class="btn btn-primary">Adquiérelo Hoy</a>
+                        <a href="#instalar" class="btn btn-outline">Pedir demo de 6 horas</a>
+                    </div>
+                </div>
+
+                <div class="price-card featured">
+                    <h3 class="plan-name"><i class="fas fa-calendar-alt"></i> 3 Meses</h3>
+                    <div class="plan-price">₡5,900</div>
+                    <div class="plan-duration">cada 3 meses</div>
+                    <div class="plan-savings">Ahorrás ₡1,600</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> <strong>1 pantalla / dispositivo</strong></li>
+                        <li><i class="fas fa-check"></i> +5.689 canales HD/4K</li>
+                        <li><i class="fas fa-check"></i> +17.552 películas</li>
+                        <li><i class="fas fa-check"></i> +7.638 series de TV</li>
+                        <li><i class="fas fa-check"></i> Deportes HD/4K</li>
+                        <li><i class="fas fa-check"></i> Soporte: Todos los días</li>
+                    </ul>
+                    <div class="plan-actions">
+                        <a href="https://wa.link/r5w5is" target="_blank" class="btn btn-primary">Adquiérelo Hoy</a>
+                        <a href="#instalar" class="btn btn-outline">Pedir demo de 6 horas</a>
+                    </div>
+                </div>
+
+                <div class="price-card">
+                    <h3 class="plan-name"><i class="fas fa-calendar-alt"></i> 6 Meses</h3>
+                    <div class="plan-price">₡9,500</div>
+                    <div class="plan-duration">cada 6 meses</div>
+                    <div class="plan-savings">Ahorrás ₡5,500</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> <strong>1 pantalla / dispositivo</strong></li>
+                        <li><i class="fas fa-check"></i> +5.689 canales HD/4K</li>
+                        <li><i class="fas fa-check"></i> +17.552 películas</li>
+                        <li><i class="fas fa-check"></i> +7.638 series de TV</li>
+                        <li><i class="fas fa-check"></i> Deportes HD/4K</li>
+                        <li><i class="fas fa-check"></i> Soporte: Todos los días</li>
+                    </ul>
+                    <div class="plan-actions">
+                        <a href="https://wa.link/xov3pi" target="_blank" class="btn btn-primary">Adquiérelo Hoy</a>
+                        <a href="#instalar" class="btn btn-outline">Pedir demo de 6 horas</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 Dispositivos Plans -->
+            <div class="pricing-grid device-plans" id="plans-4">
+                <div class="price-card">
+                    <h3 class="plan-name"><i class="fas fa-calendar-alt"></i> 1 Mes</h3>
+                    <div class="plan-price">₡4,500</div>
+                    <div class="plan-duration">por mes</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> <strong>4 pantallas / dispositivos</strong></li>
+                        <li><i class="fas fa-check"></i> +5.689 canales HD/4K</li>
+                        <li><i class="fas fa-check"></i> +17.552 películas</li>
+                        <li><i class="fas fa-check"></i> +7.638 series de TV</li>
+                        <li><i class="fas fa-check"></i> Deportes HD/4K</li>
+                        <li><i class="fas fa-check"></i> Soporte: Todos los días</li>
+                    </ul>
+                    <div class="plan-actions">
+                        <a href="https://wa.link/jcg5fq" target="_blank" class="btn btn-primary">Adquiérelo Hoy</a>
+                        <a href="#instalar" class="btn btn-outline">Pedir demo de 6 horas</a>
+                    </div>
+                </div>
+
+                <div class="price-card featured">
+                    <h3 class="plan-name"><i class="fas fa-calendar-alt"></i> 3 Meses</h3>
+                    <div class="plan-price">₡9,900</div>
+                    <div class="plan-duration">cada 3 meses</div>
+                    <div class="plan-savings">Ahorrás ₡3,600</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> <strong>4 pantallas / dispositivos</strong></li>
+                        <li><i class="fas fa-check"></i> +5.689 canales HD/4K</li>
+                        <li><i class="fas fa-check"></i> +17.552 películas</li>
+                        <li><i class="fas fa-check"></i> +7.638 series de TV</li>
+                        <li><i class="fas fa-check"></i> Deportes HD/4K</li>
+                        <li><i class="fas fa-check"></i> Soporte: Todos los días</li>
+                    </ul>
+                    <div class="plan-actions">
+                        <a href="https://wa.link/98596w" target="_blank" class="btn btn-primary">Adquiérelo Hoy</a>
+                        <a href="#instalar" class="btn btn-outline">Pedir demo de 6 horas</a>
+                    </div>
+                </div>
+
+                <div class="price-card">
+                    <h3 class="plan-name"><i class="fas fa-calendar-alt"></i> 6 Meses</h3>
+                    <div class="plan-price">₡18,000</div>
+                    <div class="plan-duration">cada 6 meses</div>
+                    <div class="plan-savings">Ahorrás ₡9,000</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> <strong>4 pantallas / dispositivos</strong></li>
+                        <li><i class="fas fa-check"></i> +5.689 canales HD/4K</li>
+                        <li><i class="fas fa-check"></i> +17.552 películas</li>
+                        <li><i class="fas fa-check"></i> +7.638 series de TV</li>
+                        <li><i class="fas fa-check"></i> Deportes HD/4K</li>
+                        <li><i class="fas fa-check"></i> Soporte: Todos los días</li>
+                    </ul>
+                    <div class="plan-actions">
+                        <a href="https://wa.link/snn1nl" target="_blank" class="btn btn-primary">Adquiérelo Hoy</a>
+                        <a href="#instalar" class="btn btn-outline">Pedir demo de 6 horas</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Installation Section -->
+        <section id="instalar" class="installation">
+            <h2>¿Cómo <span class="text-gradient">Instalar?</span></h2>
+
+            <div class="install-grid">
+                <!-- Android -->
+                <div class="install-card">
+                    <h3><i class="fab fa-android"></i> Android (Play Store)</h3>
+                    <ul class="install-steps">
+                        <li>Abre la Play Store en tu dispositivo Android.</li>
+                        <li>Busca: <strong>"TV Mágico"</strong> (o abre el link directo).</li>
+                        <li>Instala la app y ábrela.</li>
+                        <li>Luego te ayudamos a cargar el acceso (lista / usuario).</li>
+                    </ul>
+                    <div class="install-actions">
+                        <a href="https://play.google.com/store/apps/details?id=tvmagico.appcom&hl=es_419" target="_blank" class="btn btn-outline"><i
+                                class="fas fa-external-link-alt"></i> Link directo</a>
+                        <a href="https://wa.link/n6h8t4" target="_blank" class="btn btn-primary">Pedir demo de 6 horas</a>
+                    </div>
+                </div>
+
+                <!-- iOS -->
+                <div class="install-card">
+                    <h3><i class="fab fa-apple"></i> iOS (iPhone / iPad)</h3>
+                    <ul class="install-steps">
+                        <li>Abre la App Store.</li>
+                        <li>Busca e instala esta app: <strong>IBO PRO PLAYER</strong></li>
+                        <li>Abre la app y solicita tu demo para configurar el acceso.</li>
+                    </ul>
+                    <div class="install-actions">
+                        <a href="#" class="btn btn-outline"><i class="fab fa-app-store"></i> App Store</a>
+                        <a href="https://wa.link/aws5eh" target="_blank" class="btn btn-primary">Pedir demo de 6 horas</a>
+                    </div>
+                </div>
+
+                <!-- Smart TV / Fire TV -->
+                <div class="install-card">
+                    <h3><i class="fas fa-tv"></i> Smart TV / Android TV / FireTV</h3>
+                    <ul class="install-steps">
+                        <li>Instala la app "Downloader" en tu TV.</li>
+                        <li>En Downloader, ingresa el código: <strong>9028228</strong></li>
+                        <li>Descarga e instala la app.</li>
+                        <li>Luego solicita tu demo para activar.</li>
+                    </ul>
+                    <div class="install-actions">
+                        <button class="btn btn-outline"
+                            onclick="navigator.clipboard.writeText('9028228'); alert('Código copiado: 9028228');"
+                            style="cursor:pointer;"><i class="fas fa-copy"></i> Copiar código 9028228</button>
+                        <a href="https://wa.link/z24iuq" target="_blank" class="btn btn-primary">Pedir demo de 6 horas</a>
+                    </div>
+                </div>
+
+                <!-- Roku -->
+                <div class="install-card">
+                    <h3><i class="fas fa-broadcast-tower"></i> Roku</h3>
+                    <ul class="install-steps">
+                        <li>Abre el Roku Channel Store.</li>
+                        <li>Busca <strong>"TV Mágico"</strong> o abre el link directo.</li>
+                        <li>Instala el canal y ábrelo.</li>
+                        <li>Luego solicita tu demo para configurar el acceso.</li>
+                    </ul>
+                    <div class="install-actions">
+                        <a href="https://channelstore.roku.com/es-cr/details/57e6905363384c5878e40a013a7cf55e:8144f0868e1fd2f19d0418f64ad4bebd/tv-magico" target="_blank" class="btn btn-outline"><i class="fas fa-store"></i> Abrir tienda Roku</a>
+                        <a href="https://wa.link/45wt49" target="_blank" class="btn btn-primary">Pedir demo de 6 horas</a>
+                    </div>
+                </div>
+
+                <!-- Samsung/LG -->
+                <div class="install-card">
+                    <h3><i class="fas fa-tv"></i> Samsung / LG</h3>
+                    <ul class="install-steps">
+                        <li>Abre la tienda de tu televisor.</li>
+                        <li>Busca el app <strong>ibo pro player</strong>.</li>
+                        <li>Descarga e instala el app.</li>
+                        <li>Solicita tu demo para activar.</li>
+                    </ul>
+                    <div class="install-actions">
+                        <a href="https://us.lgappstv.com/main/tvapp/detail?appId=1209143" target="_blank" class="btn btn-outline"><i class="fas fa-store"></i> Tienda LG</a>
+                        <a href="https://www.samsung.com/es/tvs/smart-tv/samsung-tv-apps-detail/?appId=3202410037109" target="_blank" class="btn btn-outline"><i class="fas fa-store"></i> Tienda Samsung</a>
+                        <a href="https://wa.link/u5ddyw" target="_blank" class="btn btn-primary">Pedir demo de 6 horas</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="content-section">
+            <div class="content-intro">
+                <h2>Películas, Series y <span class="text-gradient">TV</span></h2>
+                <p>Explora nuestro contenido: estrenos, series completas y deportes/canales en vivo. Solicita tu demo
+                    gratis de 6 horas o adquiere el servicio para activarlo en tus dispositivos.</p>
+            </div>
+
+            <!-- Estrenos -->
+            <div class="content-row">
+                <div class="content-text">
+                    <span class="tag">#estrenos</span>
+                    <h3>Estrenos de Películas</h3>
+                    <div class="content-stat"><span class="content-stat-number">17.552</span> películas disponibles</div>
+                    <p>Estrenos actualizados en HD y Full HD para que siempre tengas algo nuevo que ver.</p>
+                    <div class="content-actions">
+                        <a href="catalogo.html" class="btn btn-outline"><i class="fas fa-film"></i> Ver Catálogo</a>
+                        <a href="#instalar" class="btn btn-outline">Quiero mi demo de 6 horas</a>
+                        <a href="#planes" class="btn btn-primary">Adquirir el servicio</a>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Estrenos de películas">
+                </div>
+            </div>
+
+            <!-- Series -->
+            <div class="content-row">
+                <div class="content-text">
+                    <span class="tag">#series</span>
+                    <h3>Series Completas</h3>
+                    <div class="content-stat"><span class="content-stat-number">7.638</span> series disponibles</div>
+                    <p>Miles de series disponibles para maratonear, con temporadas completas.</p>
+                    <div class="content-actions">
+                        <a href="catalogo.html" class="btn btn-outline"><i class="fas fa-tv"></i> Ver Catálogo</a>
+                        <a href="#instalar" class="btn btn-outline">Quiero mi demo de 6 horas</a>
+                        <a href="#planes" class="btn btn-primary">Adquirir el servicio</a>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Series completas">
+                </div>
+            </div>
+
+            <!-- Deportes -->
+            <div class="content-row">
+                <div class="content-text">
+                    <span class="tag">#en vivo</span>
+                    <h3>Deportes y Canales en Vivo</h3>
+                    <div class="content-stat"><span class="content-stat-number">5.689</span> canales en vivo</div>
+                    <p>Más de 5.689 canales en vivo: deportes, noticias, entretenimiento y más.</p>
+                    <div class="content-actions">
+                        <a href="catalogo.html" class="btn btn-outline"><i class="fas fa-satellite-dish"></i> Ver Catálogo</a>
+                        <a href="#instalar" class="btn btn-outline">Quiero mi demo de 6 horas</a>
+                        <a href="#planes" class="btn btn-primary">Adquirir el servicio</a>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Deportes en vivo">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 FlowTV. Todos los derechos reservados.</p>
+    </footer>
+    <!-- Promotional Popup -->
+    <div id="promo-popup-overlay" class="popup-overlay">
+        <div class="popup-container">
+            <button id="popup-close-btn" class="popup-close" aria-label="Cerrar">&times;</button>
+            <div class="popup-logo">
+                <img src="images/logo.png" alt="Flow TV Logo" onerror="this.src='https://via.placeholder.com/120x120/ff3b3b/ffffff?text=F'">
+                <div class="popup-brand-name">FLOW<span class="popup-brand-highlight">TV</span></div>
+            </div>
+            <div class="popup-stats">
+                <div class="popup-stat-card">
+                    <span class="popup-stat-number">5.689</span>
+                    <span class="popup-stat-label">CANALES</span>
+                </div>
+                <div class="popup-stat-card">
+                    <span class="popup-stat-number">17.552</span>
+                    <span class="popup-stat-label">PELÍCULAS</span>
+                </div>
+                <div class="popup-stat-card">
+                    <span class="popup-stat-number">7.638</span>
+                    <span class="popup-stat-label">SERIES</span>
+                </div>
+            </div>
+            <div class="popup-headline">
+                <h2>Disfruta del Mejor</h2>
+                <h2 class="popup-highlight">Streaming Premium</h2>
+                <h2>Sin Límites</h2>
+            </div>
+            <div class="popup-actions">
+                <a href="#instalar" class="btn popup-btn-trial" onclick="closePopup()"><i class="fas fa-play-circle"></i> Prueba Gratis 6 Horas</a>
+                <a href="#planes" class="btn popup-btn-plans" onclick="closePopup()"><i class="fas fa-list"></i> Ver Planes</a>
+                <a href="catalogo.html" class="btn popup-btn-plans" onclick="closePopup()"><i class="fas fa-th"></i> Ver Cat&#225;logo</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const popupOverlay = document.getElementById('promo-popup-overlay');
+        const popupCloseBtn = document.getElementById('popup-close-btn');
+        function closePopup() {
+            popupOverlay.classList.add('popup-closing');
+            setTimeout(() => { popupOverlay.style.display = 'none'; popupOverlay.classList.remove('popup-closing'); }, 400);
+        }
+        popupCloseBtn.addEventListener('click', closePopup);
+        popupOverlay.addEventListener('click', function(e) { if (e.target === popupOverlay) closePopup(); });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePopup(); });
+        window.addEventListener('load', function() { 
+            const params = new URLSearchParams(window.location.search);
+            if (!params.has('nopopup')) {
+                setTimeout(() => { popupOverlay.classList.add('popup-active'); }, 800); 
+            } else {
+                popupOverlay.style.display = 'none';
+            }
+        });
+
+        // Device toggle for pricing
+        function switchDevice(count) {
+            document.querySelectorAll('.device-toggle-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.device-toggle-btn[data-device="${count}"]`).classList.add('active');
+            document.querySelectorAll('.device-plans').forEach(grid => {
+                grid.classList.remove('active-plan');
+            });
+            const target = document.getElementById(`plans-${count}`);
+            target.classList.add('active-plan');
+            gtag('event', 'switch_device_plan', { device_count: count });
+        }
+
+        // GA4 Event Tracking
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a[href]');
+            if (!link) return;
+            const href = link.getAttribute('href') || '';
+            if (href.includes('wa.link') || href.includes('whatsapp')) {
+                gtag('event', 'click_whatsapp', { link_url: href, page: 'index' });
+            } else if (link.textContent.includes('Adquiérelo') || link.textContent.includes('Adquirir')) {
+                const plan = link.closest('.price-card');
+                const planName = plan ? plan.querySelector('.plan-name')?.textContent : '';
+                const planPrice = plan ? plan.querySelector('.plan-price')?.textContent : '';
+                gtag('event', 'click_purchase', { plan_name: planName, plan_price: planPrice });
+            } else if (link.textContent.includes('demo') || link.textContent.includes('Demo')) {
+                gtag('event', 'click_demo', { link_text: link.textContent.trim() });
+            } else if (href.includes('catalogo')) {
+                gtag('event', 'click_catalog', { link_text: link.textContent.trim() });
+            }
+        });
+    </script>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.link/8fijhf" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+
+</html>
